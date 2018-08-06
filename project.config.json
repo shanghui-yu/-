@@ -1,0 +1,15 @@
+{
+	"description": "A WePY project",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"appid": "wx424e83487c2eef7d",
+	"projectname": "ctpc",
+	"miniprogramRoot": "./dist",
+	"condition": {}
+}
