@@ -22,13 +22,44 @@ setStore(store)
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/home'
+      'pages/index',
+      'pages/publish',
+      'pages/news',
+      'pages/me'
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      list: [
+        {
+          pagePath: 'pages/index',
+          text: '首页',
+          iconPath: './images/home.png',
+          selectedIconPath: './images/home-select.png'
+        },
+        {
+          pagePath: 'pages/publish',
+          text: '发布',
+          iconPath: './images/publish.png',
+          selectedIconPath: './images/publish-select.png'
+        },
+        {
+          pagePath: 'pages/news',
+          text: '消息',
+          iconPath: './images/news.png',
+          selectedIconPath: './images/news-select.png'
+        },
+        {
+          pagePath: 'pages/me',
+          text: '我',
+          iconPath: './images/me.png',
+          selectedIconPath: './images/me-select.png'
+        }
+      ]
     },
     networkTimeout: {
       'request': 10000,
