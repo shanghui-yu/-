@@ -16,6 +16,13 @@
         </swiper-item>
       </block>
     </swiper>
+
+    <i-tabs current="{{ current }}" bindchange="handleChange">
+        <i-tab key="tab1" title="人找车"></i-tab>
+        <i-tab key="tab2" title="车找人"></i-tab>
+        <i-tab key="tab3" title="车找货"></i-tab>
+        <i-tab key="tab4" title="货找车"></i-tab>
+    </i-tabs>
   </view>
 </template>
 
@@ -39,7 +46,11 @@
 
   export default class Index extends wepy.page {
     config = {
-      navigationBarTitleText: 'test'
+      navigationBarTitleText: 'test',
+      usingComponents: {
+        'i-tabs': '../components/iview/tabs/index',
+        'i-tab': '../components/iview/tab/index'
+      }
     }
     components = {
       toast: Toast
@@ -55,23 +66,31 @@
       ],
       autoplay: false,
       interval: 3000,
-      duration: 1000
+      duration: 1000,
+      current: 'tab1',
+      current_scroll: 'tab1'
     }
 
     computed = {
     }
 
     methods = {
-  
+      handleChange ({ detail }) {
+        this.current = detail.key
+      },
+
+      handleChangeScroll ({ detail }) {
+        this.current_scroll = detail.key
+      }
     }
 
     events = {
     }
 
     onLoad() {
-      wepy.switchTab({
-        url: '/pages/me'
-      })
+      // wepy.switchTab({
+      //   url: '/pages/me'
+      // })
     }
   }
 </script>
