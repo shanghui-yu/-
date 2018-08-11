@@ -9,7 +9,7 @@
 </style>
 <template>
   <view class="container">
-    <swiper  class="swiper" indicator-dots="{{indicatorDots}}" autoplay indicator-dots interval="{{interval}}" duration="{{duration}}">
+    <swiper  class="swiper" autoplay indicator-dots interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{imgUrls}}" wx:key="index">
         <swiper-item>
           <image src="{{item}}" class="slide-image"/>
@@ -53,7 +53,6 @@
         'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
         'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
       ],
-      indicatorDots: false,
       autoplay: false,
       interval: 3000,
       duration: 1000

@@ -32,12 +32,13 @@
 
   export default class Index extends wepy.page {
     config = {
-      navigationBarTitleText: 'test'
+      navigationBarTitleText: 'test',
+      usingComponents: {
+      }
     }
     components = {
       toast: Toast
     }
-
     mixins = [testMixin]
 
     data = {
