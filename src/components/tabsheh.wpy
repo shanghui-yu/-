@@ -1,0 +1,41 @@
+<style lang="less" scoped>
+.tabs{
+  background:#fff;
+  height: 45px;
+  display: flex;
+  .item{
+    font-size: 14px;
+    color:#80848f;
+    display: inline-flex;
+    flex:1;
+    align-items: center;
+    justify-content: center;
+  }
+  .select{
+    color:#2d8cf0;
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      width: 50%;
+      left: 25%;
+      bottom: 0;
+      height: 3px;
+      border-bottom:3px solid #2d8cf0;
+    }
+  }
+}
+</style>
+<template>
+  <view class="tabs">
+    <view class="item select">人找车</view>
+    <view class="item">车找人</view>
+    <view class="item">车找货</view>
+    <view class="item">货找车</view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  export default class tabsheh extends wepy.component {
+  }
+</script>

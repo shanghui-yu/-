@@ -1,12 +1,4 @@
-<style lang="less">
-.swiper{
-  width: 100%;
-  height: 400rpx;
-  image{
-    width: 100%;
-  }
-}
-</style>
+
 <template>
   <view class="container">
     <swiper  class="swiper" autoplay indicator-dots interval="{{interval}}" duration="{{duration}}">
@@ -17,12 +9,12 @@
       </block>
     </swiper>
 
-    <i-tabs current="{{ current }}" bindchange="handleChange">
-        <i-tab key="tab1" title="人找车"></i-tab>
-        <i-tab key="tab2" title="车找人"></i-tab>
-        <i-tab key="tab3" title="车找货"></i-tab>
-        <i-tab key="tab4" title="货找车"></i-tab>
-    </i-tabs>
+    <!-- tab切换 -->
+    <Tabsheh></Tabsheh>
+    <!-- 人找车 -->
+    <view class="">
+
+    </view>
   </view>
 </template>
 
@@ -31,7 +23,7 @@
   import { connect } from 'wepy-redux'
   import Toast from 'wepy-com-toast'
   import testMixin from '../mixins/test'
-
+  import tabsheh from '@/components/tabsheh'
   @connect({
     num (state) {
       return state.counter.num
@@ -48,12 +40,11 @@
     config = {
       navigationBarTitleText: 'test',
       usingComponents: {
-        'i-tabs': '../components/iview/tabs/index',
-        'i-tab': '../components/iview/tab/index'
       }
     }
     components = {
-      toast: Toast
+      toast: Toast,
+      Tabsheh: tabsheh
     }
 
     mixins = [testMixin]
@@ -94,3 +85,12 @@
     }
   }
 </script>
+<style lang="less" scoped>
+.swiper{
+  width: 100%;
+  height: 400rpx;
+  image{
+    width: 100%;
+  }
+}
+</style>
